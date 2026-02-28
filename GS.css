@@ -1,0 +1,121 @@
+:root{
+  --bg: linear-gradient(180deg,#0f172a 0%, #071029 100%);
+  --card:#0f172a;
+  --muted: #9aa4b2;
+  --accent: #6ee7b7;
+}
+*{box-sizing:border-box}
+html,body{
+    height:100%;
+}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:#e6eef6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+.wrap{
+    width:100%;max-width:980px;
+
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:16px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+}
+.card-header h1{
+    margin:0;
+    font-size:22px;
+}
+.muted{
+    color:var(--muted);
+    font-size:13px;
+}
+.form{
+    margin-top:16px;
+}
+.input-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+.field{
+    display:flex;
+    flex-direction:column;
+}
+.field.full{
+    grid-column:1/-1;
+}
+.field.half{
+    min-width:0;
+}
+label{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:6px;
+}
+input{
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.04);
+    background:rgba(255,255,255,0.02);
+    color:inherit;
+}
+.btn{
+    display:inline-block;
+    padding:12px 16px;
+    border-radius:10px;
+    border:none;
+    background:linear-gradient(90deg,#00c6a7,#5eead4);
+    color:#022;
+    cursor:pointer;
+    font-weight:600;
+    margin-top:12px;
+}
+.btn.outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--muted);
+}
+.divider{text-align:center;
+    margin:18px 0;
+    color:var(--muted);
+}
+.other-methods{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.card-foot{
+    margin-top:14px;
+    font-size:12px;
+}
+.error{
+    color:#ff8a8a;
+    font-size:13px;
+    margin-top:6px;
+}
+.card-element{
+    padding:12px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.03);
+}
+.mpesa{
+    display:flex;
+    gap:8px;
+}
+.mpesa input{
+    flex:1;
+}
+@media (max-width:720px){
+    .input-grid{grid-template-columns:1fr}
+    .mpesa{flex-direction:column}
+    .btn{width:100%}
+}

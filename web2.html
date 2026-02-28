@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment</title>
+  <link rel="stylesheet" href="GS.css">
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&components=buttons,marks,hosted-fields"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header class="card-header">
+        <h1>Secure Checkout</h1>
+        <p class="muted">Pay using Card, PayPal, Flutterwave or M-Pesa</p>
+      </header>
+
+      <form id="cardForm" class="form">
+        <div class="input-grid">
+          <div class="field">
+            <label for="name">Cardholder name</label>
+            <input id="name" name="name" placeholder="Jane Example" required />
+          </div>
+
+          <div class="field full">
+            <label for="cardNumber">Card number</label>
+            <input id="number" name="number" placeholder="123-456-789" required/>
+            <div id="card-errors" role="alert" class="error">
+
+            </div>
+          </div>
+
+          <div class="field half">
+            <label for="expiry">Expiry</label>
+            <input id="expiry" name="expiry" placeholder="MM/YY" />
+          </div>
+
+          <div class="field half">
+            <label for="cvv">CVV</label>
+            <input id="cvv" name="cvv" placeholder="123" />
+          </div>
+        </div>
+
+        <button id="payStripe" type="button" class="btn">Pay with Stripe</button>
+      </form>
+
+      <div class="divider">OR</div>
+
+      <div class="other-methods">
+        <div id="paypal-button-container"></div>
+
+        <button id="flutterwaveBtn" class="btn outline">Pay with Flutterwave</button>
+
+        <form id="mpesaForm" class="mpesa">
+          <input id="mpesaPhone" placeholder="07XXXXXXXX" required />
+          <button id="mpesaBtn" type="button" class="btn outline">Pay with M-Pesa</button>
+        </form>
+      </div>
+
+      <footer class="card-foot muted">Development keys only — do NOT use production keys on client.</footer>
+    </section>
+  </main>
+
+  <script src="GS.js" defer></script>
+</body>
+</html>
